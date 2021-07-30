@@ -1,0 +1,269 @@
+html {
+  font-size: 1rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --clr-primary-100: #1db489;
+  --clr-primary-200: #dc414c;
+  --clr-primary-300: #198ff5;
+  --clr-primary-400: #1ca0f2;
+  --clr-primary-500: #c4032a;
+  --clr-darktheme-100: #99ffcc;
+  --clr-darktheme-200: #1e202a;
+  --clr-darktheme-300: #1f212e;
+  --clr-darktheme-400: #252a41;
+  --clr-darktheme-500: #8b97c6;
+  --clr-darktheme-800: white;
+  --clr-lighttheme-100: #aeb3cb;
+  --clr-lighttheme-200: white;
+  --clr-lighttheme-300: #f5f7ff;
+  --clr-lighttheme-400: #f0f2fa;
+  --clr-lighttheme-500: #63687e;
+  --clr-lighttheme-600: #1e202a;
+  --clr-primarylinear-100: #fdc468, #df4996;
+  --clr-darkthemelinear-100: #378fe6, #3eda82;
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.563rem;
+  --fs-600: 1.953rem;
+  --fs-700: 2.441rem;
+  --fs-800: 3.052rem;
+}
+@media only screen and (min-width: 40em) {
+  :root {
+    --fs-300: 1rem;
+    --fs-400: 1.25rem;
+    --fs-500: 2rem;
+    --fs-600: 2.827rem;
+    --fs-700: 4rem;
+    --fs-800: 5.653rem;
+  }
+}
+
+:root {
+  --font-inter: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+.text-primary-100 {
+  color: var(--clr-primary-100) !important;
+}
+
+.bg-primary-100 {
+  background-color: var(--clr-primary-100) !important;
+}
+
+.text-primary-200 {
+  color: var(--clr-primary-200) !important;
+}
+
+.bg-primary-200 {
+  background-color: var(--clr-primary-200) !important;
+}
+
+.text-primary-300 {
+  color: var(--clr-primary-300) !important;
+}
+
+.bg-primary-300 {
+  background-color: var(--clr-primary-300) !important;
+}
+
+.text-primary-400 {
+  color: var(--clr-primary-400) !important;
+}
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400) !important;
+}
+
+.text-primary-500 {
+  color: var(--clr-primary-500) !important;
+}
+
+.bg-primary-500 {
+  background-color: var(--clr-primary-500) !important;
+}
+
+.text-darktheme-100 {
+  color: var(--clr-darktheme-100) !important;
+}
+
+.bg-darktheme-100 {
+  background-color: var(--clr-darktheme-100) !important;
+}
+
+.text-darktheme-200 {
+  color: var(--clr-darktheme-200) !important;
+}
+
+.bg-darktheme-200 {
+  background-color: var(--clr-darktheme-200) !important;
+}
+
+.text-darktheme-300 {
+  color: var(--clr-darktheme-300) !important;
+}
+
+.bg-darktheme-300 {
+  background-color: var(--clr-darktheme-300) !important;
+}
+
+.text-darktheme-400 {
+  color: var(--clr-darktheme-400) !important;
+}
+
+.bg-darktheme-400 {
+  background-color: var(--clr-darktheme-400) !important;
+}
+
+.text-darktheme-500 {
+  color: var(--clr-darktheme-500) !important;
+}
+
+.bg-darktheme-500 {
+  background-color: var(--clr-darktheme-500) !important;
+}
+
+.text-darktheme-800 {
+  color: var(--clr-darktheme-800) !important;
+}
+
+.bg-darktheme-800 {
+  background-color: var(--clr-darktheme-800) !important;
+}
+
+.text-lighttheme-100 {
+  color: var(--clr-lighttheme-100) !important;
+}
+
+.bg-lighttheme-100 {
+  background-color: var(--clr-lighttheme-100) !important;
+}
+
+.text-lighttheme-200 {
+  color: var(--clr-lighttheme-200) !important;
+}
+
+.bg-lighttheme-200 {
+  background-color: var(--clr-lighttheme-200) !important;
+}
+
+.text-lighttheme-300 {
+  color: var(--clr-lighttheme-300) !important;
+}
+
+.bg-lighttheme-300 {
+  background-color: var(--clr-lighttheme-300) !important;
+}
+
+.text-lighttheme-400 {
+  color: var(--clr-lighttheme-400) !important;
+}
+
+.bg-lighttheme-400 {
+  background-color: var(--clr-lighttheme-400) !important;
+}
+
+.text-lighttheme-500 {
+  color: var(--clr-lighttheme-500) !important;
+}
+
+.bg-lighttheme-500 {
+  background-color: var(--clr-lighttheme-500) !important;
+}
+
+.text-lighttheme-600 {
+  color: var(--clr-lighttheme-600) !important;
+}
+
+.bg-lighttheme-600 {
+  background-color: var(--clr-lighttheme-600) !important;
+}
+
+.bg-primarylinear-100 {
+  background: linear-gradient(var(--clr-primarylinear-100)) !important;
+}
+
+.bg-darkthemelinear-100 {
+  background: linear-gradient(var(--clr-darkthemelinear-100)) !important;
+}
+
+/*# sourceMappingURL=style.css.map */
