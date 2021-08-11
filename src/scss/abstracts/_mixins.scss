@@ -1,9 +1,26 @@
 @use 'breakpoints' as *;
 
-@mixin mq($key) {
+@mixin mqmin($key) {
     $size: map-get($breakpoints, $key);
 
     @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin mqmax($key) {
+    $size: map-get($breakpoints, $key);
+
+    @media only screen and (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin mqbetween($key, $key2) {
+    $size: map-get($breakpoints, $key);
+    $size2: map-get($breakpoints, $key2);
+
+    @media only screen and (min-width: $size) and (max-width: $size2){
         @content;
     }
 }

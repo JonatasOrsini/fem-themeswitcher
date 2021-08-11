@@ -1,0 +1,12 @@
+.cardgrande.twitter {
+  &::before {
+    background: hsl(203, 89%, 53%);
+  }
+  & > .redesocial {
+    & > .icone.twitter {
+      width: 21px;
+      height: 17px;
+      background: url(../images/icon-twitter.svg);
+    }
+  }
+}

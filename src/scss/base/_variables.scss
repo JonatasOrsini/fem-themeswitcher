@@ -1,27 +1,35 @@
 @use '../abstracts' as *;
 
 :root {
+
+  //  * Variáveis respectivas aos temas são encontrada na pasta /themes
+
+  // Variáveis base
+
+  // Variáveis de cores
   @each $color, $shade in $colors {
     @each $prop, $value in $shade {
       --clr-#{$color}-#{$prop}: #{$value};
     }
   }
 
+  // Variáveis de gradientes de cores
   @each $color, $shade in $linear-colors {
     @each $prop, $value in $shade {
       --clr-#{$color}-#{$prop}: #{($value)};
     }
   }
 
+  // Variáveis de font-size
   @each $screen-size, $property in $type-scale {
     @if $screen-size == small {
       @each $prop, $value in $property {
-        --fs-#{$prop}: #{$value};
+        --fz-#{$prop}: #{$value};
       }
     } @else {
-      @include mq(small) {
+      @include mqmin(small) {
         @each $prop, $value in $property {
-          --fs-#{$prop}: #{$value};
+          --fz-#{$prop}: #{$value};
         }
       }
     }

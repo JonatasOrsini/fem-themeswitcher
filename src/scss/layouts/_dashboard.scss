@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: rem(950);
+
+  & > .detalhes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  // @include mqbetween(small, medium){
+  //   padding-left: 20vw;
+  //   padding-right: 20vw;
+  // }
+
+  @include mqmax(medium){
+      max-width: rem(470);
+  }
+
+  @include mqmax(small){
+      max-width: rem(200);
+  }
+}

@@ -20,7 +20,15 @@ function imgTask() {
 }
 
 // Sass task
-function scssTask() {
+function scssCompile() {
+  return src("src/scss/**/*.scss", { sourcemaps: true })
+    .pipe(sass().on("error", sass.logError))
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(dest("src/css", { sourcemaps: "." }));
+}
+
+// Compile and export to dist folder
+function scssDist() {
   return src("src/scss/**/*.scss", { sourcemaps: true })
     .pipe(sass().on("error", sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
@@ -28,7 +36,15 @@ function scssTask() {
 }
 
 // JavaScript scssTask
-function jsTask() {
+function jsCompile() {
+  return src("src/js/*.js", { sourcemaps: true })
+    .pipe(babel({ presets: ["@babel/preset-env"] }))
+    .pipe(terser())
+    .pipe(dest("src/js", { sourcemaps: "." }));
+}
+
+// Compile and export to dist folder
+function jsDist() {
   return src("src/js/*.js", { sourcemaps: true })
     .pipe(babel({ presets: ["@babel/preset-env"] }))
     .pipe(terser())
@@ -58,27 +74,12 @@ function browserSyncReload(cb) {
 // Watch task
 function watchTask() {
   watch("src/*.html", browserSyncReload);
-  watch(
-      ["src/**/*.js"],
-      series(jsTask, browserSyncReload)
-    );
+  watch("src/scss/**/*.scss", series(scssCompile, browserSyncReload));
+  watch("src/**/*.js", series(jsCompile, browserSyncReload));
 }
 
-// // Watch task
-// function watchTask() {
-//   watch("src/*.html", browserSyncReload);
-//   watch(
-//       ["src/scss/**/*.scss", "src/**/*.js"],
-//       series(scssTask, jsTask, browserSyncReload)
-//     );
-// }
+// Dist
+exports.dist = series(copyHtml, imgTask, scssDist, jsDist);
 
 // Default gulp jsTask
-exports.default = series(
-  copyHtml,
-  imgTask,
-  scssTask,
-  jsTask,
-  browserSyncServe,
-  watchTask
-);
+exports.default = series(jsCompile, browserSyncServe, watchTask);

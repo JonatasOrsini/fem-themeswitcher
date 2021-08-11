@@ -1,0 +1,12 @@
+.cardgrande.instagram {
+  &::before {
+    background: linear-gradient(90deg, var(--clr-primarylinear-100));
+  }
+  & > .redesocial {
+    & > .icone.instagram {
+      width: 20px;
+      height: 20px;
+      background: url(../images/icon-instagram.svg);
+    }
+  }
+}

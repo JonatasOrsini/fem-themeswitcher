@@ -1,0 +1,12 @@
+.cardgrande.youtube {
+  &::before {
+    background: hsl(348, 97%, 39%);
+  }
+  & > .redesocial {
+    & > .icone.youtube {
+      width: 20px;
+      height: 20px;
+      background: url(../images/icon-youtube.svg);
+    }
+  }
+}

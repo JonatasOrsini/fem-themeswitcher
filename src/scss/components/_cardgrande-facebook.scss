@@ -1,0 +1,12 @@
+.cardgrande.facebook{
+    &::before{
+        background: hsl(208, 92%, 53%);
+    }
+    &> .redesocial{
+        &> .icone.facebook{
+            width: 20px;
+            height: 20px;
+            background: url(../images/icon-facebook.svg);
+        }
+    }
+}

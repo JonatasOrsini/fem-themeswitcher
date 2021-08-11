@@ -1,0 +1,108 @@
+@use '../abstracts' as *;
+
+// :root{
+//   --clr-basetext: undefined;
+//   --clr-background-cardgrande: undefined;
+//   --clr-activebackground-cardgrande: undefined;
+// }
+
+.cardgrande {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: rem(28) 0 rem(20) 0;
+  border-radius: 0.3125rem;
+  color: hsl(228, 12%, 44%);
+  background: var(--clr-background-cardgrande);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: var(--clr-basetext);
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: var(--clr-activebackground-cardgrande);
+  }
+
+  & > .redesocial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > .icone {
+      font-size: rem(20);
+      color: var(--clr-basetext);
+      margin-right: 0.5rem;
+    }
+
+    & > .tag {
+      color: hsl(228, 12%, 44%);
+    }
+  }
+
+  & > .numero {
+    margin-top: rem(18);
+    font-size: var(--fz-650);
+    text-align: center;
+  }
+
+  & > .texto {
+    margin-top: rem(4);
+    color: var(--clr-basetext);
+    font-size: var(--fz-50);
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  & > .crescimento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: rem(22);
+
+    &.positivo > * {
+      color: hsl(163, 72%, 41%);
+    }
+
+    &.negativo > * {
+      color: hsl(356, 69%, 56%);
+    }
+
+    & > .icone.flecha {
+      width: 8px;
+      height: 4px;
+      margin-right: 0.1rem;
+      transform: translateY(-25%);
+
+      &.-cima {
+        background: url(../images/icon-up.svg);
+      }
+
+      &.-baixo {
+        background: url(../images/icon-down.svg);
+      }
+    }
+
+    & > .numero {
+      padding-right: 0.1rem;
+    }
+
+    & > :nth-child(even) {
+      text-align: left;
+    }
+  }
+}

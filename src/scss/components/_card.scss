@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+// :root{
+//   --clr-background-card: undefined;
+//   --clr-activebackground-card: undefined;
+// }
+
+.card {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  padding: 1rem 3rem;
+  border-radius: 0.3125rem;
+  background: var(--clr-background-card);
+
+  & > :nth-child(even) {
+    text-align: right;
+  }
+  &:hover {
+    cursor: pointer;
+    background: var(--clr-activebackground-card);
+  }
+}
